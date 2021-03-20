@@ -25,3 +25,15 @@
 7. Serve
 
     > grunt serve --force
+
+8.  Install with ruby the gem compass
+
+    > gem install compass
+
+9. Replace cdnify and add the import in Gruntfile.js with grunt-google-cdn2
+
+    > npm install --save-dev grunt-google-cdn2
+
+10. Install connect-modrewrite, add the import in Gruntfile.js and modify the livereload
+
+    > npm install --save-dev connect-modrewrite
