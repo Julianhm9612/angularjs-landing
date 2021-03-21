@@ -37,3 +37,11 @@
 10. Install connect-modrewrite, add the import in Gruntfile.js and modify the livereload
 
     > npm install --save-dev connect-modrewrite
+
+11. Available commands
+
+    > yo --help
+
+12. Create constants file and configure a constant for the api
+
+    > yo angular:constant config
