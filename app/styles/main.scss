@@ -1,15 +1,60 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #e2e1e0;
+}
+
+h2 {
+  text-align: center;
+}
+
+.header {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+  .navbar {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0rem 1rem;
+
+      .logo {
+        width: 20%;
+
+        img {
+          width: 4rem;
+        }
+      }
+
+      .nav {
+        width: 80%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .item {
+          a {
+            color: inherit;
+            text-decoration: inherit;
+          }
+        }
+      }
+  }
+}
+
 // // bower:scss
- // endbower
+ //  endbower
 
 // .browsehappy {
 //   margin: 0.2em 0;
 //   background: #ccc;
 //   color: #000;
 //   padding: 0.2em 0;
-// }
-
-// body {
-//   padding: 0;
 // }
 
 // /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -65,8 +110,8 @@
 //   }
 // }
 
-// /* Responsive: Portrait tablets and up */
-// @media screen and (min-width: 768px) {
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
 //   .container {
 //     max-width: 730px;
 //   }
@@ -86,4 +131,4 @@
 //   .jumbotron {
 //     border-bottom: 0;
 //   }
-// }
+}
