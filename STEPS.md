@@ -45,3 +45,13 @@
 12. Create constants file and configure a constant for the api
 
     > yo angular:constant config
+
+13. Create service technologies
+
+    > yo angular:factory technologies
+
+14. Create mvc technologies
+
+    > yo angular:route technologies
+
+15. Create styles file of technologies

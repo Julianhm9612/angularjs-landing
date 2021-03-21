@@ -1,0 +1,38 @@
+<div class="technologies">
+    <h2>Tecnologías</h2>
+    
+    <div class="filter">
+       
+    </div>
+    
+    <div ng-if="technologies.length == 0" class="techs">
+        <div class="technology card ghost"></div>
+        <div class="technology card ghost"></div>
+        <div class="technology card ghost"></div>
+        <div class="technology card ghost"></div>
+    </div>
+    
+    <div ng-if="technologies.length > 0" class="techs">
+        <div class="technology card" ng-repeat="technology in technologies">
+            <div class="logo">
+                <img ng-src="{{ technology.logo }}" alt="logo de la tecnología">
+            </div>
+            <div class="like">
+                <img src="../images/heartless.png" alt="">
+            </div>
+            <div class="info">
+                <span class="name">{{ technology.tech }}</span>
+                <span><b>Año:</b> {{ technology.year }}</span>
+                <span><b>Autor:</b> {{ technology.author }}</span>
+                <span><b>Licencia:</b> {{ technology.license }}</span>
+                <span><b>Lenguaje:</b> {{ technology.language }}</span>
+                <span><b>Tipo:</b> {{ technology.type }}</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        Cantidad de registros: {{ technologies.length }}
+    </div>
+</div>
+

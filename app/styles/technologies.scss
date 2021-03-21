@@ -1,0 +1,58 @@
+.technologies {
+  margin: 2rem 8rem;
+
+  .techs {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 200px;
+    column-gap: 3rem;
+    row-gap: 3rem;
+    align-items: center;
+    justify-items: center;
+
+    .technology {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: stretch;
+      padding: 1rem;
+
+      .logo {
+        img {
+          width: 7rem;
+          padding: 0.5rem;
+        }
+      }
+
+      .like {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+
+        img {
+          width: 1.5rem;
+          transition: transform .2s;
+
+          &:hover {
+            transform: scale(1.5);
+          }
+
+          &:active {
+            transform: scale(1);
+          }
+        }
+      }
+
+      .info {
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .footer {
+    margin: 1rem;
+    text-align: right;
+  }
+}
