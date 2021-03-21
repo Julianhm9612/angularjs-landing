@@ -48,7 +48,7 @@
 
 13. Create service technologies
 
-    > yo angular:factory technologies
+    > yo angular:service technologies
 
 14. Create mvc technologies
 
