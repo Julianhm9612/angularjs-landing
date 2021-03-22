@@ -31,7 +31,7 @@ angular.module('angularjsLandingApp')
             this.amount = technologies.length;
             return technologies;
         },
-        likeTecnology: function(paramTechnology) {
+        likeTechnology: function(paramTechnology) {
             var technologies = this.getLikes();
             technologies.push(paramTechnology);
             this.amount = technologies.length;
@@ -40,7 +40,7 @@ angular.module('angularjsLandingApp')
             // this.notify();
             // $rootScope.$broadcast('', '');
         },
-        dislikeTecnology: function(paramTechnology) {
+        dislikeTechnology: function(paramTechnology) {
             var technologies = this.getLikes();
             technologies = technologies.filter(function(technology) { return technology.tech !== paramTechnology.tech; } );
             this.amount = technologies.length;

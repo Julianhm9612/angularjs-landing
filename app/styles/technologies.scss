@@ -4,7 +4,13 @@
   .filter {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 1rem;
+
+    .search {
+      display: flex;
+      align-items: center;
+    }
   }
 
   .techs {

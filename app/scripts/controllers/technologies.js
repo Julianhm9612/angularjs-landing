@@ -9,9 +9,13 @@
  */
 angular.module('angularjsLandingApp')
     .controller('TechnologiesCtrl', function ($scope, technologies) {
+        $scope.types = [ 'Back-End', 'Front-End', 'Mobile' ];
         $scope.technologies = [];
+        $scope.filteredTechs = [];
         $scope.propertyName = 'tech';
         $scope.reverse = false;
+        $scope.searchByTech = '';
+        $scope.searchByType = null;
 
         $scope.loadTechnologies = function () {
             technologies.getTechnologies().then(function (response) {
@@ -20,6 +24,7 @@ angular.module('angularjsLandingApp')
                 $scope.technologies.forEach(function (technology) {
                     technology.selected = likes.find(function (like) { return like.tech === technology.tech; });
                 });
+                $scope.search();
             }, function (error) {
                 console.log(error);
             });
@@ -28,14 +33,25 @@ angular.module('angularjsLandingApp')
         $scope.likeTechnology = function (technology) {
             technology.selected = !technology.selected;
             if (technology.selected) {
-                technologies.likeTecnology(technology);
+                technologies.likeTechnology(technology);
             } else {
-                technologies.dislikeTecnology(technology);
+                technologies.dislikeTechnology(technology);
             }
         };
 
         $scope.sortBy = function(order) {
             $scope.reverse = order === 'd';
+        };
+
+        $scope.search = function() {
+            if ($scope.searchByTech === '' && ($scope.searchByType === null)) {
+                $scope.filteredTechs = $scope.technologies;
+            } else {
+                $scope.filteredTechs = $scope.technologies.filter(function(technology) {
+                    const regex = new RegExp($scope.searchByTech.toLowerCase());
+                    return ($scope.searchByType === null ? true : $scope.searchByType === technology.type) && regex.test(technology.tech.toLowerCase());
+                });
+            }
         };
 
         $scope.loadTechnologies();

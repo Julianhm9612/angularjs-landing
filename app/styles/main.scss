@@ -103,6 +103,31 @@ button {
   }
 }
 
+
+input[type=text], select {
+  width: 100%;
+  padding: 5px 10px;
+  margin: 8px 8px;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+
+  &:focus {
+    border: 3px solid #555;
+  }
+
+  &.input-search {
+    background-color: white;
+    background-image: url('../images/searchicon.png');
+    background-position: 6px 3px;
+    background-repeat: no-repeat;
+    padding-left: 40px !important;
+  }
+
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .header {

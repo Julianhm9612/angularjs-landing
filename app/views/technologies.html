@@ -8,8 +8,12 @@
             <button class="mini-button" ng-class="{ 'selected': !reverse }" ng-click="sortBy('d')">Z - A</button>
         </div>
         <div class="search">
-            <input type="text">
-            <input type="text">
+            <label for="type">Tipo:</label>
+            <select id="type" name="type" placeholder="Buscar por tipo" ng-change="search()" ng-model="searchByType" ng-options="type for type in types">
+                <option value="">-- Escoger tipo --</option>
+            </select>
+            <label for="tech">Nombre:</label>
+            <input class="input-search" id="tech" name="tech" type="text" placeholder="Buscar por nombre" ng-change="search()" ng-model="searchByTech">
         </div>
     </div>
 
@@ -21,7 +25,7 @@
     </div>
 
     <div ng-if="technologies.length > 0" class="techs">
-        <div class="technology card" ng-repeat="technology in technologies | orderBy : propertyName : reverse">
+        <div class="technology card" ng-repeat="technology in filteredTechs | orderBy : propertyName : reverse">
             <div class="logo">
                 <img ng-src="{{ technology.logo }}" alt="logo de la tecnología">
             </div>
@@ -40,7 +44,7 @@
     </div>
 
     <div class="footer">
-        Cantidad de registros: {{ technologies.length }}
+        Cantidad de registros: {{ filteredTechs.length }}
     </div>
 </div>
 
