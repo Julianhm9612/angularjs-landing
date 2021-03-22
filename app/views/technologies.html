@@ -2,7 +2,7 @@
     <h2>Tecnologías</h2>
     
     <div class="filter">
-       
+
     </div>
     
     <div ng-if="technologies.length == 0" class="techs">
@@ -17,8 +17,8 @@
             <div class="logo">
                 <img ng-src="{{ technology.logo }}" alt="logo de la tecnología">
             </div>
-            <div class="like">
-                <img src="../images/heartless.png" alt="">
+            <div class="like" ng-click="likeTechnology(technology)">
+                <img ng-src="{{ technology.selected ? '../images/heart.png' : '../images/heartless.png' }}" alt="">
             </div>
             <div class="info">
                 <span class="name">{{ technology.tech }}</span>

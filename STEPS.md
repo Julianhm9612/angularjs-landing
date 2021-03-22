@@ -55,3 +55,5 @@
     > yo angular:route technologies
 
 15. Create styles file of technologies
+
+16. create component header
