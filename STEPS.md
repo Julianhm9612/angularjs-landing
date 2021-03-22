@@ -56,4 +56,8 @@
 
 15. Create styles file of technologies
 
-16. create component header
+16. Create component header
+
+17. Create service authService
+
+    > yo angular:service auth-service
