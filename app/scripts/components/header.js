@@ -19,7 +19,7 @@ angular.module('angularjsLandingApp')
 
       $scope.getLikes = function() {
         return technologies.amount;
-      }
+      };
 
       // $scope.$on('', function(event, args) {
       // });
