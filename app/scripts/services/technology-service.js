@@ -8,7 +8,7 @@
  * Service in the angularjsLandingApp.
  */
 angular.module('angularjsLandingApp')
-  .service('technologies', function ($http, config) {
+  .service('technologyService', function ($http, config) {
     return {
         amount: 0,
         getTechnologies: function() {

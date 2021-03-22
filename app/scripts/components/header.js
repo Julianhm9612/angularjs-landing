@@ -10,15 +10,15 @@
 angular.module('angularjsLandingApp')
   .component('header', {
     templateUrl: 'views/header.html',
-    controller: function($scope, technologies) {
-      technologies.getLikes();
+    controller: function($scope, technologyService) {
+      technologyService.getLikes();
 
-      // technologies.subscribe($scope, function somethingChanged() {
-      //   $scope.likesAmount = technologies.amount;
+      // technologyService.subscribe($scope, function somethingChanged() {
+      //   $scope.likesAmount = technologyService.amount;
       // });
 
       $scope.getLikes = function() {
-        return technologies.amount;
+        return technologyService.amount;
       };
 
       // $scope.$on('', function(event, args) {

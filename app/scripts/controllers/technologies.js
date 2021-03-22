@@ -8,7 +8,7 @@
  * Controller of the angularjsLandingApp
  */
 angular.module('angularjsLandingApp')
-    .controller('TechnologiesCtrl', function ($scope, technologies) {
+    .controller('TechnologiesCtrl', function ($scope, technologyService) {
         $scope.types = [ 'Back-End', 'Front-End', 'Mobile' ];
         $scope.technologies = [];
         $scope.filteredTechs = [];
@@ -18,9 +18,9 @@ angular.module('angularjsLandingApp')
         $scope.searchByType = null;
 
         $scope.loadTechnologies = function () {
-            technologies.getTechnologies().then(function (response) {
+            technologyService.getTechnologies().then(function (response) {
                 $scope.technologies = response.data;
-                var likes = technologies.getLikes();
+                var likes = technologyService.getLikes();
                 $scope.technologies.forEach(function (technology) {
                     technology.selected = likes.find(function (like) { return like.tech === technology.tech; });
                 });
@@ -33,9 +33,9 @@ angular.module('angularjsLandingApp')
         $scope.likeTechnology = function (technology) {
             technology.selected = !technology.selected;
             if (technology.selected) {
-                technologies.likeTechnology(technology);
+                technologyService.likeTechnology(technology);
             } else {
-                technologies.dislikeTechnology(technology);
+                technologyService.dislikeTechnology(technology);
             }
         };
 

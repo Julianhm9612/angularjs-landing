@@ -46,9 +46,9 @@
 
     > yo angular:constant config
 
-13. Create service technologies
+13. Create service technologyService
 
-    > yo angular:service technologies
+    > yo angular:service technology-service
 
 14. Create mvc technologies
 
