@@ -34,7 +34,7 @@ h2 {
       .nav {
         width: 80%;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-around;;
         align-items: center;
 
         .item {
@@ -63,89 +63,174 @@ h2 {
   background-color: #ccc;
 }
 
+button {
+  border: none;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
 
-// // bower:scss
- //  endbower
+  &:focus {
+    outline: 0;
+  }
+}
 
-// .browsehappy {
-//   margin: 0.2em 0;
-//   background: #ccc;
-//   color: #000;
-//   padding: 0.2em 0;
-// }
+.mini-button {
+  padding: 4px 8px;
+  text-align: center;
+  font-size: 14px;
+  margin: 4px 2px;
+  background: #cc2b5e; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #cc2b5e, #753a88); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #cc2b5e, #753a88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-// /* Everything but the jumbotron gets side spacing for mobile first views */
-// .header,
-// .marketing,
-// .footer {
-//   padding-left: 15px;
-//   padding-right: 15px;
-// }
+  &:hover {
+    background: #ec008c;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fc6767, #ec008c);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fc6767, #ec008c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
 
-// /* Custom page header */
-// .header {
-//   border-bottom: 1px solid #e5e5e5;
-//   margin-bottom: 10px;
+  &.selected {
+    color: #000;
+    background: #fff;
 
-//   /* Make the masthead heading the same height as the navigation */
-//   h3 {
-//     margin-top: 0;
-//     margin-bottom: 0;
-//     line-height: 40px;
-//     padding-bottom: 19px;
-//   }
-// }
+    &:hover {
+      color: #fff;
+      background: #536976;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #292E49, #536976);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #292E49, #536976); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+  }
+}
 
-// /* Custom page footer */
-// .footer {
-//   padding-top: 19px;
-//   color: #777;
-//   border-top: 1px solid #e5e5e5;
-// }
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .header {
+    .navbar {
+        .logo {
+          width: 10%;
 
-// .container-narrow > hr {
-//   margin: 30px 0;
-// }
+          img {
+            width: 3rem;
+          }
+        }
 
-// /* Main marketing message and sign up button */
-// .jumbotron {
-//   text-align: center;
-//   border-bottom: 1px solid #e5e5e5;
+        .nav {
+          width: 90%;
+        }
+      }
+  }
+}
 
-//   .btn {
-//     font-size: 21px;
-//     padding: 14px 24px;
-//   }
-// }
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .header {
+    .navbar {
+        .logo {
+          width: 10%;
 
-// /* Supporting marketing content */
-// .marketing {
-//   margin: 40px 0;
+          img {
+            width: 3rem;
+          }
+        }
 
-//   p + h4 {
-//     margin-top: 28px;
-//   }
-// }
+        .nav {
+          width: 90%;
+        }
+      }
+  }
+}
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-//   .container {
-//     max-width: 730px;
-//   }
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .header {
+    .navbar {
+        .logo {
+          width: 10%;
 
-//   /* Remove the padding we set earlier */
-//   .header,
-//   .marketing,
-//   .footer {
-//     padding-left: 0;
-//     padding-right: 0;
-//   }
-//   /* Space out the masthead */
-//   .header {
-//     margin-bottom: 30px;
-//   }
-//   /* Remove the bottom border on the jumbotron for visual effect */
-//   .jumbotron {
-//     border-bottom: 0;
-//   }
+          img {
+            width: 4rem;
+          }
+        }
+
+        .nav {
+          width: 90%;
+        }
+      }
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .header {
+    .navbar {
+        .logo {
+          width: 10%;
+
+          img {
+            width: 4rem;
+          }
+        }
+
+        .nav {
+          width: 90%;
+        }
+      }
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .header {
+    .navbar {
+        .logo {
+          width: 10%;
+
+          img {
+            width: 4rem;
+          }
+        }
+
+        .nav {
+          width: 90%;
+        }
+      }
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1224px) {
+  .header {
+    .navbar {
+        .logo {
+          width: 20%;
+
+          img {
+            width: 4rem;
+          }
+        }
+
+        .nav {
+          width: 80%;
+        }
+      }
+  }
+}
+
+@media only screen and (min-width: 1824px) {
+  .header {
+    .navbar {
+        .logo {
+          width: 20%;
+
+          img {
+            width: 4rem;
+          }
+        }
+
+        .nav {
+          width: 80%;
+        }
+      }
+  }
 }

@@ -1,19 +1,27 @@
 <div class="technologies">
     <h2>Tecnologías</h2>
-    
-    <div class="filter">
 
+    <div class="filter">
+        <div class="order">
+            Ordenar de la:
+            <button class="mini-button" ng-class="{ 'selected': reverse }" ng-click="sortBy('a')">A - Z</button>
+            <button class="mini-button" ng-class="{ 'selected': !reverse }" ng-click="sortBy('d')">Z - A</button>
+        </div>
+        <div class="search">
+            <input type="text">
+            <input type="text">
+        </div>
     </div>
-    
+
     <div ng-if="technologies.length == 0" class="techs">
         <div class="technology card ghost"></div>
         <div class="technology card ghost"></div>
         <div class="technology card ghost"></div>
         <div class="technology card ghost"></div>
     </div>
-    
+
     <div ng-if="technologies.length > 0" class="techs">
-        <div class="technology card" ng-repeat="technology in technologies">
+        <div class="technology card" ng-repeat="technology in technologies | orderBy : propertyName : reverse">
             <div class="logo">
                 <img ng-src="{{ technology.logo }}" alt="logo de la tecnología">
             </div>
@@ -21,7 +29,7 @@
                 <img ng-src="{{ technology.selected ? '../images/heart.png' : '../images/heartless.png' }}" alt="">
             </div>
             <div class="info">
-                <span class="name">{{ technology.tech }}</span>
+                <p class="name">{{ technology.tech }}</p>
                 <span><b>Año:</b> {{ technology.year }}</span>
                 <span><b>Autor:</b> {{ technology.author }}</span>
                 <span><b>Licencia:</b> {{ technology.license }}</span>
@@ -30,7 +38,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="footer">
         Cantidad de registros: {{ technologies.length }}
     </div>

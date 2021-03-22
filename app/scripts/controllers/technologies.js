@@ -10,6 +10,8 @@
 angular.module('angularjsLandingApp')
     .controller('TechnologiesCtrl', function ($scope, technologies) {
         $scope.technologies = [];
+        $scope.propertyName = 'tech';
+        $scope.reverse = false;
 
         $scope.loadTechnologies = function () {
             technologies.getTechnologies().then(function (response) {
@@ -30,6 +32,10 @@ angular.module('angularjsLandingApp')
             } else {
                 technologies.dislikeTecnology(technology);
             }
+        };
+
+        $scope.sortBy = function(order) {
+            $scope.reverse = order === 'd';
         };
 
         $scope.loadTechnologies();

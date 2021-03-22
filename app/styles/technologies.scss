@@ -1,18 +1,24 @@
 .technologies {
-  margin: 2rem 8rem;
+  margin: 2rem 4rem;
+
+  .filter {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }
 
   .techs {
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-template-rows: 200px;
     column-gap: 3rem;
-    row-gap: 3rem;
+    row-gap: 1rem;
     align-items: center;
     justify-items: center;
 
     .technology {
       display: flex;
-      justify-content: center;
+      // justify-content: center;
       align-items: center;
       align-self: stretch;
       padding: 1rem;
@@ -47,6 +53,10 @@
         span {
           display: block;
         }
+
+        .name {
+          font-size: 1.2rem;
+        }
       }
     }
   }
@@ -54,5 +64,88 @@
   .footer {
     margin: 1rem;
     text-align: right;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .technologies {
+    margin: 2rem 2rem;
+
+    .techs {
+      grid-template-columns: auto;
+      row-gap: 1rem;
+    }
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .technologies {
+    margin: 2rem 2rem;
+
+    .techs {
+      grid-template-columns: auto auto;
+      row-gap: 1rem;
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .technologies {
+    margin: 2rem 2rem;
+
+    .techs {
+      grid-template-columns: auto auto;
+      row-gap: 1rem;
+    }
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .technologies {
+    margin: 2rem 2rem;
+
+    .techs {
+      grid-template-columns: auto auto auto;
+      row-gap: 1rem;
+    }
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .technologies {
+    margin: 2rem 4rem;
+
+    .techs {
+      grid-template-columns: auto auto auto auto;
+      row-gap: 1rem;
+    }
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1224px) {
+  .technologies {
+    margin: 2rem 4rem;
+
+    .techs {
+      grid-template-columns: auto auto auto auto;
+      row-gap: 1rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 1824px) {
+  .technologies {
+    margin: 2rem 4rem;
+
+    .techs {
+      grid-template-columns: auto auto auto auto auto;
+      row-gap: 1rem;
+    }
   }
 }
