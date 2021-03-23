@@ -218,22 +218,55 @@ input[type=text], input[type="password"], input[type="number"], input[type="emai
   justify-content: space-evenly;
 }
 
+.main {
+  display: grid;
+  grid-template-columns: 45% 45%;
+  column-gap: 1rem;
+  row-gap: 1rem;
+  justify-content: center;
+  margin: 1rem;
+
+  .section {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.main-footer {
+  width: 100%;
+  height: 10rem;
+  background-color: #000;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .header {
     .navbar {
-        .logo {
-          width: 10%;
+      .logo {
+        width: 10%;
 
-          img {
-            width: 3rem;
-          }
-        }
-
-        .nav {
-          width: 90%;
+        img {
+          width: 3rem;
         }
       }
+
+      .nav {
+        width: 90%;
+      }
+    }
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: 100%;
+
+    .info {
+      height: 5rem;
+    }
   }
 }
 
@@ -241,18 +274,18 @@ input[type=text], input[type="password"], input[type="number"], input[type="emai
 @media only screen and (min-width: 600px) {
   .header {
     .navbar {
-        .logo {
-          width: 10%;
+      .logo {
+        width: 10%;
 
-          img {
-            width: 3rem;
-          }
-        }
-
-        .nav {
-          width: 90%;
+        img {
+          width: 3rem;
         }
       }
+
+      .nav {
+        width: 90%;
+      }
+    }
   }
 }
 
@@ -260,18 +293,18 @@ input[type=text], input[type="password"], input[type="number"], input[type="emai
 @media only screen and (min-width: 768px) {
   .header {
     .navbar {
-        .logo {
-          width: 10%;
+      .logo {
+        width: 10%;
 
-          img {
-            width: 4rem;
-          }
-        }
-
-        .nav {
-          width: 90%;
+        img {
+          width: 4rem;
         }
       }
+
+      .nav {
+        width: 90%;
+      }
+    }
   }
 }
 
@@ -279,18 +312,18 @@ input[type=text], input[type="password"], input[type="number"], input[type="emai
 @media only screen and (min-width: 992px) {
   .header {
     .navbar {
-        .logo {
-          width: 10%;
+      .logo {
+        width: 10%;
 
-          img {
-            width: 4rem;
-          }
-        }
-
-        .nav {
-          width: 90%;
+        img {
+          width: 4rem;
         }
       }
+
+      .nav {
+        width: 90%;
+      }
+    }
   }
 }
 
@@ -298,18 +331,18 @@ input[type=text], input[type="password"], input[type="number"], input[type="emai
 @media only screen and (min-width: 1200px) {
   .header {
     .navbar {
-        .logo {
-          width: 10%;
+      .logo {
+        width: 10%;
 
-          img {
-            width: 4rem;
-          }
-        }
-
-        .nav {
-          width: 90%;
+        img {
+          width: 4rem;
         }
       }
+
+      .nav {
+        width: 90%;
+      }
+    }
   }
 }
 
@@ -317,35 +350,35 @@ input[type=text], input[type="password"], input[type="number"], input[type="emai
 @media only screen and (min-width: 1224px) {
   .header {
     .navbar {
-        .logo {
-          width: 20%;
+      .logo {
+        width: 20%;
 
-          img {
-            width: 4rem;
-          }
-        }
-
-        .nav {
-          width: 80%;
+        img {
+          width: 4rem;
         }
       }
+
+      .nav {
+        width: 80%;
+      }
+    }
   }
 }
 
 @media only screen and (min-width: 1824px) {
   .header {
     .navbar {
-        .logo {
-          width: 20%;
+      .logo {
+        width: 20%;
 
-          img {
-            width: 4rem;
-          }
-        }
-
-        .nav {
-          width: 80%;
+        img {
+          width: 4rem;
         }
       }
+
+      .nav {
+        width: 80%;
+      }
+    }
   }
 }
