@@ -36,6 +36,11 @@ angular
         controller: 'TechnologiesCtrl',
         controllerAs: 'technologiesC'
       })
+      .when('/sign-in', {
+        templateUrl: 'views/sign-in.html',
+        controller: 'SignInCtrl',
+        controllerAs: 'signInC'
+      })
       .otherwise({
         redirectTo: '/'
       });

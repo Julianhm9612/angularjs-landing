@@ -75,19 +75,21 @@ button {
   }
 }
 
-.mini-button {
-  padding: 4px 8px;
-  text-align: center;
-  font-size: 14px;
-  margin: 4px 2px;
+button {
+  transition: transform .2s;
   background: #cc2b5e; /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #cc2b5e, #753a88); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #cc2b5e, #753a88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   &:hover {
+    transform: scale(1);
     background: #ec008c;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #fc6767, #ec008c);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #fc6767, #ec008c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  &:active {
+    transform: scale(0.9);
   }
 
   &.selected {
@@ -103,8 +105,21 @@ button {
   }
 }
 
+.button {
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 14px;
+  margin: 4px 2px;
+}
 
-input[type=text], select {
+.mini-button {
+  padding: 4px 8px;
+  text-align: center;
+  font-size: 14px;
+  margin: 4px 2px;
+}
+
+input[type=text], input[type="password"], input[type="number"], input[type="email"], select {
   width: 100%;
   padding: 5px 10px;
   margin: 8px 8px;
@@ -125,7 +140,82 @@ input[type=text], select {
     background-repeat: no-repeat;
     padding-left: 40px !important;
   }
+}
 
+.checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-top: 1rem;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  left: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border: 1px solid;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox:hover input[type="checkbox"] ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox input[type="checkbox"]:checked ~ .checkmark {
+  background: #cc2b5e; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #cc2b5e, #753a88); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #cc2b5e, #753a88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox input[type="checkbox"]:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox .checkmark:after {
+  left: 7px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 /* Extra small devices (phones, 600px and down) */

@@ -61,3 +61,9 @@
 17. Create service authService
 
     > yo angular:service auth-service
+
+18. Create mvc sign in
+
+    > yo angular:route sign-in
+
+19. Create styles file of sign in
