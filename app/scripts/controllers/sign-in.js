@@ -8,6 +8,8 @@
  * Controller of the angularjsLandingApp
  */
 angular.module('angularjsLandingApp')
-  .controller('SignInCtrl', function () {
+  .controller('SignInCtrl', function ($scope) {
+    $scope.user = {};
+
 
   });
