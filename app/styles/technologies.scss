@@ -1,5 +1,5 @@
 .technologies {
-  margin: 2rem 4rem;
+  margin: 8rem 4rem 4rem;
 
   .filter {
     display: flex;
@@ -124,7 +124,7 @@
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   .technologies {
-    margin: 2rem 4rem;
+    margin: 8rem 4rem 4rem;
 
     .techs {
       grid-template-columns: auto auto auto auto;
@@ -136,7 +136,7 @@
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1224px) {
   .technologies {
-    margin: 2rem 4rem;
+    margin: 8rem 4rem 4rem;
 
     .techs {
       grid-template-columns: auto auto auto auto;
@@ -147,7 +147,7 @@
 
 @media only screen and (min-width: 1824px) {
   .technologies {
-    margin: 2rem 4rem;
+    margin: 8rem 4rem 4rem;
 
     .techs {
       grid-template-columns: auto auto auto auto auto;
