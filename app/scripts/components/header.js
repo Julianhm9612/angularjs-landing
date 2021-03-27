@@ -27,7 +27,7 @@ angular.module('angularjsLandingApp')
       $scope.scroll = function(route) {
         route = route === '' ? window.location.pathname : route;
         var myNav = document.getElementById('app-header');
-        if (route === '/') {
+        if (route === '/') { // Only when it is the main  page
           myNav.classList.remove('header-no-padding');
           window.onscroll = function () {
             if (document.body.scrollTop >= 400 || document.documentElement.scrollTop >= 400) {
@@ -42,9 +42,31 @@ angular.module('angularjsLandingApp')
         }
       };
 
+      /**
+       * Handle scroll to change styles
+       */
       $scope.$on('$routeChangeStart', function($event, next, current) {
         $scope.scroll(next.$$route.originalPath);
       });
+
+      $scope.navigateTo = function(div) {
+        window.scroll(0, findPosition(document.getElementById(div)));
+      };
+
+      /**
+       * Search the top of an element
+       * @param {*} obj Element to search
+       * @returns Current top
+       */
+      function findPosition(obj) {
+        var currenttop = 0;
+        if (obj.offsetParent) {
+            do {
+                currenttop += obj.offsetTop - 100;
+            } while ((obj = obj.offsetParent));
+            return [currenttop];
+        }
+      }
 
       $scope.scroll('');
     }

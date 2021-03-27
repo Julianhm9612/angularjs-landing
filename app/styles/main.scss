@@ -85,10 +85,27 @@ h2 {
       .item {
         font-size: 1.4rem;
         font-weight: bold;
+        cursor: pointer;
 
         a {
           color: inherit;
           text-decoration: inherit;
+
+          &:after {
+            display:block;
+            content: '';
+            border-bottom: solid 3px $base-color;
+            transform: scaleX(0);
+            transition: transform 250ms ease-in-out;
+          }
+
+          &:active {
+            border-bottom: solid 5px $base-color;
+          }
+
+          &:hover:after {
+            transform: scaleX(1);
+          }
         }
 
         img {
@@ -101,13 +118,13 @@ h2 {
       font-weight: bold;
     }
   }
-}
 
-.header-no-padding {
-  padding: 0;
-  height: 5rem;
-  background-color: #fff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  &.header-no-padding {
+    padding: 0;
+    height: 5rem;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
 }
 
 .card {
