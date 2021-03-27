@@ -310,7 +310,7 @@ input[type=text], input[type="password"], input[type="number"], input[type="emai
     justify-content: space-around;
     align-items: center;
     height: 100vh;
-    background: url("../images/Bg_Header.png");
+    background: url("../images/Bg_Header.png") no-repeat center center;
 
     .info {
       font-size: 2.8rem;
@@ -411,7 +411,7 @@ input[type=text], input[type="password"], input[type="number"], input[type="emai
       grid-template-columns: auto auto auto auto auto auto;
       column-gap: 3rem;
       font-size: 1.3rem;
-      margin: 4rem 0rem 3rem 0rem;
+      margin: 4rem 0rem;
 
       .item {
         display: flex;
@@ -462,11 +462,45 @@ input[type=text], input[type="password"], input[type="number"], input[type="emai
   }
 
   .footer {
-    height: 50vh;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url("../images/Bg_Footer.png");
+    flex-direction: column;
+    height: 30rem;
+    background: url("../images/Bg_Footer.png") no-repeat center center;
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+
+      .text-1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .text-2 {
+        font-size: 2rem;
+      }
+    }
+
+    a {
+      button {
+        background-color: $base-color;
+        color: #fff;
+        padding: 0.8rem 4rem !important;
+        font-weight: bold;
+        font-size: 1.3rem;
+        margin: 3rem 0rem 10rem;
+      }
+    }
+
+    .logo {
+      position: absolute;
+      bottom: 2rem;
+    }
   }
 }
 
