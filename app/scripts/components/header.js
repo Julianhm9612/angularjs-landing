@@ -32,13 +32,13 @@ angular.module('angularjsLandingApp')
         route = route === '' ? window.location.pathname : route;
         var myNav = document.getElementById('app-header');
         if (route === '/') { // Only when it is the main  page
-          if (window.innerWidth > 768) {
+          if (window.innerWidth > 992) {
             myNav.classList.remove('header-no-padding');
           } else {
             myNav.classList.add('header-no-padding');
           }
           window.onscroll = function () {
-            if (window.innerWidth > 768) {
+            if (window.innerWidth > 992) {
               if (document.body.scrollTop >= 400 || document.documentElement.scrollTop >= 400) {
                   myNav.classList.add('header-no-padding');
               } else {
@@ -58,7 +58,9 @@ angular.module('angularjsLandingApp')
        * Handle scroll to change styles
        */
       $scope.$on('$routeChangeStart', function($event, next, current) {
-        $scope.openMenu();
+        if (window.innerWidth < 992) {
+          $scope.openMenu();
+        }
         $scope.scroll(next.$$route.originalPath);
       });
 
