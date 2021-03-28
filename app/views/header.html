@@ -5,8 +5,8 @@
         </div>
         <div class="menu">
             <div class="nav">
-                <div class="item">
-                    <a href="/">Inicio</a>
+                <div class="item" ng-click="navigateTo('welcome')">
+                    <a>Inicio</a>
                 </div>
                 <div class="item" ng-click="navigateTo('technologies')">
                     <a>Tecnologías</a>
@@ -18,8 +18,8 @@
                     <a>Requerimientos</a>
                 </div>
                 <div class="item">
-                    <button ng-click="login()">
-                        <a>Login</a>
+                    <button ng-click="signIn()">
+                        <a>Registro</a>
                     </button>
                 </div>
                 <div ng-if="getLikes() > 0" class="item">

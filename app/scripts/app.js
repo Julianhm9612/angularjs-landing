@@ -36,7 +36,7 @@ angular
         controller: 'TechnologiesCtrl',
         controllerAs: 'technologiesC'
       })
-      .when('/sign-in', {
+      .when('/registro', {
         templateUrl: 'views/sign-in.html',
         controller: 'SignInCtrl',
         controllerAs: 'signInC'

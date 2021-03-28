@@ -66,9 +66,18 @@ angular.module('angularjsLandingApp')
       });
 
       $scope.navigateTo = function(div) {
-        window.scroll(0, findPosition(document.getElementById(div)));
-        var menu = document.getElementById('menu');
-        menu.classList.remove('menu-responsive');
+        if (window.location.pathname === '/') {
+          window.scroll(0, findPosition(document.getElementById(div)));
+          var menu = document.getElementById('menu');
+          menu.classList.remove('menu-responsive');
+          icon.classList.remove("change");
+          $scope.opened = false;
+        } else {
+          $location.path('');
+          setTimeout(function() {
+            $scope.navigateTo(div);
+          }, 100);
+        }
       };
 
       /**
@@ -97,8 +106,8 @@ angular.module('angularjsLandingApp')
         }
       };
 
-      $scope.login = function() {
-        $location.path('sign-in');
+      $scope.signIn = function() {
+        $location.path('registro');
       };
 
       technologyService.getLikes();
