@@ -1,9 +1,9 @@
 <div id="app-header" class="header">
-    <div class="navbar">
+    <div id="menu" class="navbar">
         <div class="logo">
             <img src="../images/logo_full_color.svg" alt="Logo de Wolox">
         </div>
-        <div>
+        <div class="menu">
             <div class="nav">
                 <div class="item">
                     <a href="/">Inicio</a>
@@ -24,9 +24,14 @@
                 </div>
                 <div ng-if="getLikes() > 0" class="item">
                     <span>{{ getLikes() }}</span>
-                    <img src="images/heart.png" alt="Tecnologías seleccionadas">
+                    <img src="../images/heart.png" alt="Tecnologías seleccionadas">
                 </div>
             </div>
+        </div>
+        <div id="mobile-menu" class="mobile-menu" ng-click="openMenu()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div
         </div>
     </div>
 </div>

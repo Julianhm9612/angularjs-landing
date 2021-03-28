@@ -28,12 +28,20 @@ angular.module('angularjsLandingApp')
         route = route === '' ? window.location.pathname : route;
         var myNav = document.getElementById('app-header');
         if (route === '/') { // Only when it is the main  page
-          myNav.classList.remove('header-no-padding');
+          if (window.innerWidth > 768) {
+            myNav.classList.remove('header-no-padding');
+          } else {
+            myNav.classList.add('header-no-padding');
+          }
           window.onscroll = function () {
-            if (document.body.scrollTop >= 400 || document.documentElement.scrollTop >= 400) {
-                myNav.classList.add('header-no-padding');
+            if (window.innerWidth > 768) {
+              if (document.body.scrollTop >= 400 || document.documentElement.scrollTop >= 400) {
+                  myNav.classList.add('header-no-padding');
+              } else {
+                  myNav.classList.remove('header-no-padding');
+              }
             } else {
-                myNav.classList.remove('header-no-padding');
+              myNav.classList.add('header-no-padding');
             }
           };
         } else {
@@ -51,6 +59,8 @@ angular.module('angularjsLandingApp')
 
       $scope.navigateTo = function(div) {
         window.scroll(0, findPosition(document.getElementById(div)));
+        var menu = document.getElementById('menu');
+        menu.classList.remove('menu-responsive');
       };
 
       /**
@@ -66,6 +76,14 @@ angular.module('angularjsLandingApp')
             } while ((obj = obj.offsetParent));
             return [currenttop];
         }
+      }
+
+      $scope.openMenu = function() {
+        var menu = document.getElementById('menu');
+        menu.classList.toggle('menu-responsive');
+        
+        var icon = document.getElementById('mobile-menu');
+        icon.classList.toggle("change");
       }
 
       $scope.scroll('');
