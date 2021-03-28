@@ -67,3 +67,7 @@
     > yo angular:route sign-in
 
 19. Create styles file of sign in
+
+20. Create service dataService
+
+    > yo angular:service data-service
