@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "postinstall": "npm install -g grunt && bower install && grunt build"
+    "postinstall": "gem install compass && npm install -g grunt && bower install && grunt build"
   },
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
