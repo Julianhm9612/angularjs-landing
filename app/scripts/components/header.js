@@ -12,6 +12,7 @@ angular.module('angularjsLandingApp')
     templateUrl: 'views/header.html',
     controller: ['$scope', 'technologyService', '$location', function($scope, technologyService, $location) {
 
+      var nav = document.getElementById('app-header');
       var menu = document.getElementById('menu');
       var icon = document.getElementById('mobile-menu');
 
@@ -30,27 +31,26 @@ angular.module('angularjsLandingApp')
 
       $scope.scroll = function(route) {
         route = route === '' ? window.location.pathname : route;
-        var myNav = document.getElementById('app-header');
         if (route === '/') { // Only when it is the main  page
           if (window.innerWidth > 992) {
-            myNav.classList.remove('header-no-padding');
+            nav.classList.remove('header-no-padding');
           } else {
-            myNav.classList.add('header-no-padding');
+            nav.classList.add('header-no-padding');
           }
           window.onscroll = function () {
             if (window.innerWidth > 992) {
               if (document.body.scrollTop >= 400 || document.documentElement.scrollTop >= 400) {
-                  myNav.classList.add('header-no-padding');
+                nav.classList.add('header-no-padding');
               } else {
-                  myNav.classList.remove('header-no-padding');
+                nav.classList.remove('header-no-padding');
               }
             } else {
-              myNav.classList.add('header-no-padding');
+              nav.classList.add('header-no-padding');
             }
           };
         } else {
           window.onscroll = null;
-          myNav.classList.add('header-no-padding');
+          nav.classList.add('header-no-padding');
         }
       };
 
