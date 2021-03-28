@@ -24,7 +24,7 @@
 
 7. Serve
 
-    > grunt serve --force
+    > grunt serve
 
 8.  Install with ruby the gem compass
 

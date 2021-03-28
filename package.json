@@ -1,6 +1,10 @@
 {
   "name": "angularjslanding",
   "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "postinstall": "bower install && grunt build"
+  },
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
     "connect-modrewrite": "^0.10.2",
@@ -33,5 +37,9 @@
   },
   "engines": {
     "node": ">=0.10.0"
+  },
+  "dependencies": {
+    "bower": "^1.8.12",
+    "express": "^4.17.1"
   }
 }
