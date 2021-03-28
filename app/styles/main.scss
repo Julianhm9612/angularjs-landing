@@ -81,6 +81,7 @@ h2 {
         font-size: 1.4rem;
         font-weight: bold;
         cursor: pointer;
+        margin-right: 1rem;
 
         a {
           color: inherit;
@@ -1141,7 +1142,29 @@ input[type=text], input[type="password"], input[type="number"], input[type="emai
 
 /* Large devices */
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .header {
+    .navbar {
+      .nav {
+        width: 80%;
 
+        .item {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .main {
+    .technologies-section {
+      margin: 0rem 4rem;
+
+      .list {
+        img {
+          width: 30rem;
+        }
+      }
+    }
+  }
 }
 
 /* Extra large devices */

@@ -9,6 +9,7 @@
  */
 angular.module('angularjsLandingApp')
     .controller('TechnologiesCtrl', ['$scope', 'technologyService', function ($scope, technologyService) {
+
         $scope.types = [ 'Back-End', 'Front-End', 'Mobile' ];
         $scope.technologies = [];
         $scope.filteredTechs = [];

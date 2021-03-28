@@ -9,6 +9,7 @@
  */
 angular.module('angularjsLandingApp')
   .controller('SignInCtrl', ['$scope', function ($scope) {
+
     $scope.user = {};
 
   }]);

@@ -11,7 +11,11 @@ angular.module('angularjsLandingApp')
   .component('header', {
     templateUrl: 'views/header.html',
     controller: ['$scope', 'technologyService', '$location', function($scope, technologyService, $location) {
-      technologyService.getLikes();
+
+      var menu = document.getElementById('menu');
+      var icon = document.getElementById('mobile-menu');
+
+      $scope.opened = false;
 
       // technologyService.subscribe($scope, function somethingChanged() {
       //   $scope.likesAmount = technologyService.amount;
@@ -54,6 +58,7 @@ angular.module('angularjsLandingApp')
        * Handle scroll to change styles
        */
       $scope.$on('$routeChangeStart', function($event, next, current) {
+        $scope.openMenu();
         $scope.scroll(next.$$route.originalPath);
       });
 
@@ -79,16 +84,21 @@ angular.module('angularjsLandingApp')
       }
 
       $scope.openMenu = function() {
-        var menu = document.getElementById('menu');
-        menu.classList.toggle('menu-responsive');
-
-        var icon = document.getElementById('mobile-menu');
-        icon.classList.toggle("change");
+        if ($scope.opened) {
+          menu.classList.remove('menu-responsive');
+          icon.classList.remove("change");
+        } else {
+          menu.classList.add('menu-responsive');
+          icon.classList.add("change");
+        }
+        $scope.opened = !$scope.opened;
       };
 
       $scope.login = function() {
         $location.path('sign-in');
       };
+
+      technologyService.getLikes();
 
       $scope.scroll('');
     }]
