@@ -8,7 +8,7 @@
  * Service in the angularjsLandingApp.
  */
 angular.module('angularjsLandingApp')
-  .service('technologyService', function ($http, config) {
+  .service('technologyService', ['$http', 'config', function ($http, config) {
     return {
         amount: 0,
         getTechnologies: function() {
@@ -50,4 +50,4 @@ angular.module('angularjsLandingApp')
             // $rootScope.$broadcast('', '');
         }
     };
-  });
+  }]);

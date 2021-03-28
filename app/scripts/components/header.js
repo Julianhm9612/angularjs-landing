@@ -10,7 +10,7 @@
 angular.module('angularjsLandingApp')
   .component('header', {
     templateUrl: 'views/header.html',
-    controller: function($scope, technologyService) {
+    controller: ['$scope', 'technologyService', '$location', function($scope, technologyService, $location) {
       technologyService.getLikes();
 
       // technologyService.subscribe($scope, function somethingChanged() {
@@ -81,11 +81,15 @@ angular.module('angularjsLandingApp')
       $scope.openMenu = function() {
         var menu = document.getElementById('menu');
         menu.classList.toggle('menu-responsive');
-        
+
         var icon = document.getElementById('mobile-menu');
         icon.classList.toggle("change");
-      }
+      };
+
+      $scope.login = function() {
+        $location.path('sign-in');
+      };
 
       $scope.scroll('');
-    }
+    }]
   });

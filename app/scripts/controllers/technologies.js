@@ -8,7 +8,7 @@
  * Controller of the angularjsLandingApp
  */
 angular.module('angularjsLandingApp')
-    .controller('TechnologiesCtrl', function ($scope, technologyService) {
+    .controller('TechnologiesCtrl', ['$scope', 'technologyService', function ($scope, technologyService) {
         $scope.types = [ 'Back-End', 'Front-End', 'Mobile' ];
         $scope.technologies = [];
         $scope.filteredTechs = [];
@@ -55,4 +55,4 @@ angular.module('angularjsLandingApp')
         };
 
         $scope.loadTechnologies();
-    });
+    }]);

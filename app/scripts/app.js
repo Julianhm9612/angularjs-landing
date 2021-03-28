@@ -17,7 +17,7 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider, $locationProvider) {
+  .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $locationProvider.html5Mode({
       enabled: true,
       requireBase: false
@@ -44,4 +44,4 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  }]);
