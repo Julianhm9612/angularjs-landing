@@ -1,13 +1,35 @@
 'use strict';
 
 /**
- * @ngdoc service
+ * @ngdoc factory
  * @name angularjsLandingApp.authService
  * @description
  * # authService
- * Service in the angularjsLandingApp.
+ * factory in the angularjsLandingApp.
  */
 angular.module('angularjsLandingApp')
-  .service('authService', function () {
-    // AngularJS will instantiate a singleton by calling "new" on this function
-  });
+  .factory('authService', ['$q', function ($q) {
+    return {
+      getToken: function() {
+        return localStorage.getItem('access_token') ? localStorage.getItem('access_token') : '';
+      },
+      isAuthenticated: function() {
+        if (this.getToken() !== '') {
+          // If authenticated, return anything you want, probably a user object
+          return true;
+        } else {
+          // Else send a rejection
+          return $q.reject('Not Authenticated');
+        }
+      },
+      isAnonymous: function() {
+        if (this.getToken() === '') {
+          // If authenticated, return anything you want, probably a user object
+          return true;
+        } else {
+          // Else send a rejection
+          return $q.reject('Authenticated');
+        }
+      }
+    };
+  }]);

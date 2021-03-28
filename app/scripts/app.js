@@ -17,7 +17,21 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
+  .run(['$rootScope', '$location', 'authService', function($rootScope, $location, authService) {
+    if (authService.getToken() !== '') {
+      $location.path('/tecnologias');
+    }
+    // If the route change failed due to authentication error, redirect them out
+    $rootScope.$on('$routeChangeError', function(event, current, previous, rejection) {
+      if (rejection === 'Not Authenticated') {
+        $location.path('');
+      } else if (rejection === 'Authenticated') {
+        $location.path('tecnologias');
+      }
+    });
+  }])
   .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+
     $locationProvider.html5Mode({
       enabled: true,
       requireBase: false
@@ -29,19 +43,32 @@ angular
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
-        controllerAs: 'mainC'
+        controllerAs: 'mainC',
+        caseInsensitiveMatch: true
       })
       .when('/tecnologias', {
         templateUrl: 'views/technologies.html',
         controller: 'TechnologiesCtrl',
-        controllerAs: 'technologiesC'
+        controllerAs: 'technologiesC',
+        caseInsensitiveMatch: true,
+        resolve: {
+          auth: function(authService) {
+            return authService.isAuthenticated();
+          }
+        }
       })
       .when('/registro', {
         templateUrl: 'views/sign-in.html',
         controller: 'SignInCtrl',
-        controllerAs: 'signInC'
+        controllerAs: 'signInC',
+        caseInsensitiveMatch: true,
+        resolve: {
+          auth: function(authService) {
+            return authService.isAnonymous();
+          }
+        }
       })
       .otherwise({
         redirectTo: '/'
       });
-  }]);
+    }]);
