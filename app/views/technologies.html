@@ -4,16 +4,20 @@
     <div class="filter">
         <div class="order">
             Ordenar de la:
-            <button class="mini-button" ng-class="{ 'selected': reverse }" ng-click="sortBy('a')">A - Z</button>
-            <button class="mini-button" ng-class="{ 'selected': !reverse }" ng-click="sortBy('d')">Z - A</button>
+            <button class="mini-button" ng-class="{ 'selected': !reverse }" ng-click="sortBy('a')">A - Z</button>
+            <button class="mini-button" ng-class="{ 'selected': reverse }" ng-click="sortBy('d')">Z - A</button>
         </div>
         <div class="search">
-            <label for="type">Tipo:</label>
-            <select id="type" name="type" placeholder="Buscar por tipo" ng-change="search()" ng-model="searchByType" ng-options="type for type in types">
-                <option value="">-- Escoger tipo --</option>
-            </select>
-            <label for="tech">Nombre:</label>
-            <input class="input-search" id="tech" name="tech" type="text" placeholder="Buscar por nombre" ng-change="search()" ng-model="searchByTech">
+            <div class="type">
+                <label for="type">Tipo:</label>
+                <select id="type" name="type" placeholder="Buscar por tipo" ng-change="search()" ng-model="searchByType" ng-options="type for type in types">
+                    <option value="">-- Escoger tipo --</option>
+                </select>
+            </div>
+            <div class="name">
+                <label for="tech">Nombre:</label>
+                <input class="input-search" id="tech" name="tech" type="text" placeholder="Buscar por nombre" ng-change="search()" ng-model="searchByTech">
+            </div>
         </div>
     </div>
 
