@@ -59,6 +59,7 @@ angular.module('angularjsLandingApp')
        */
       $scope.$on('$routeChangeStart', function($event, next, current) {
         if (window.innerWidth < 992) {
+          $scope.opened = true; // Force to close the menu
           $scope.openMenu();
         }
         $scope.scroll(next.$$route.originalPath);
@@ -86,14 +87,14 @@ angular.module('angularjsLandingApp')
       }
 
       $scope.openMenu = function() {
+        $scope.opened = !$scope.opened;
         if ($scope.opened) {
-          menu.classList.remove('menu-responsive');
-          icon.classList.remove("change");
-        } else {
           menu.classList.add('menu-responsive');
           icon.classList.add("change");
+        } else {
+          menu.classList.remove('menu-responsive');
+          icon.classList.remove("change");
         }
-        $scope.opened = !$scope.opened;
       };
 
       $scope.login = function() {
