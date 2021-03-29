@@ -68,6 +68,11 @@ angular
           }
         }
       })
+      .when('/terminos', {
+        templateUrl: 'views/terms.html',
+        controller: 'TermsCtrl',
+        controllerAs: 'termsC'
+      })
       .otherwise({
         redirectTo: '/'
       });

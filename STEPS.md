@@ -75,3 +75,7 @@
 21. Create directive to compare values
 
     > yo angular:directive compare-to
+
+22. Create mvc terms
+
+    > yo angular:route terms
