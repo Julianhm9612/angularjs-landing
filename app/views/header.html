@@ -17,7 +17,7 @@
                 <div class="item" ng-click="navigateTo('requirements')">
                     <a>Requerimientos</a>
                 </div>
-                <div class="item">
+                <div ng-if="!getAuthenticated()" class="item">
                     <button ng-click="signIn()">
                         <a>Registro</a>
                     </button>
