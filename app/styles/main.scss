@@ -1,11 +1,11 @@
 @font-face {
-  font-family: 'Fira Sans';
-  src: url("./fonts/Montserrat/Montserrat-Regular") format('truetype');
+  font-family: 'Montserrat';
+  src: url("./fonts/Montserrat/Montserrat-Regular.ttf") format('truetype');
   font-weight: bold;
   // font-style: italic;
 }
 
-$font-main: 'Fira Sans', sans-serif;
+$font-main: 'Montserrat';
 
 $base-color: rgb(42, 167, 223);
 $secondary-color: rgb(163, 204, 57);
