@@ -10,7 +10,7 @@
 angular.module('angularjsLandingApp')
   .component('header', {
     templateUrl: 'views/header.html',
-    controller: ['$scope', 'technologyService', '$location', function($scope, technologyService, $location) {
+    controller: ['$scope', 'technologyService', '$location', 'authService', function($scope, technologyService, $location, authService) {
 
       var nav = document.getElementById('app-header');
       var menu = document.getElementById('menu');
@@ -24,6 +24,10 @@ angular.module('angularjsLandingApp')
 
       $scope.getLikes = function() {
         return technologyService.amount;
+      };
+
+      $scope.getAuthenticated = function() {
+        return authService.authenticated;
       };
 
       // $scope.$on('', function(event, args) {
@@ -111,6 +115,8 @@ angular.module('angularjsLandingApp')
       };
 
       technologyService.getLikes();
+
+      authService.getToken();
 
       $scope.scroll('');
     }]

@@ -1,22 +1,25 @@
 'use strict';
 
 /**
- * @ngdoc factory
+ * @ngdoc service
  * @name angularjsLandingApp.authService
  * @description
  * # authService
- * factory in the angularjsLandingApp.
+ * service in the angularjsLandingApp.
  */
 angular.module('angularjsLandingApp')
-  .factory('authService', ['$q', '$http', 'config', function ($q, $http, config) {
+  .service('authService', ['$q', '$http', 'config', function ($q, $http, config) {
     return {
+      authenticated: false,
       signIn: function(user) {
         return $http.post(config.apiUrl + '/signup', user).then(function(response) {
             return response;
         });
       },
       getToken: function() {
-        return localStorage.getItem('access_token') ? localStorage.getItem('access_token') : '';
+        var token = localStorage.getItem('access_token') ? localStorage.getItem('access_token') : '';
+        this.authenticated = token !== '';
+        return token;
       },
       isAuthenticated: function() {
         if (this.getToken() !== '') {

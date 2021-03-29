@@ -25,11 +25,13 @@ angular.module('angularjsLandingApp')
         password: $scope.user.pass
       };
       authService.signIn(user).then(function (response) {
+        authService.authenticated = true;
         localStorage.setItem('usuario', JSON.stringify(user));
         localStorage.setItem('access_token', response.data.token);
         $location.path('tecnologias');
       }, function (error) {
         console.log(error);
+        authService.authenticated = false;
         localStorage.removeItem('usuario');
         localStorage.removeItem('access_token');
       });
