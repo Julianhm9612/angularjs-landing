@@ -19,7 +19,7 @@ angular.module('angularjsLandingApp')
           { id: 5, name: 'Perú' }
         ];
       },
-      getProvinces: function() {
+      getDepartments: function() {
         return [
           { id: 1, name: 'Buenos Aires', country: 1 },
           { id: 2, name: 'Córdoba', country: 1 },
