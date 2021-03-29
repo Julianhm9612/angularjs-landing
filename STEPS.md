@@ -71,3 +71,7 @@
 20. Create service dataService
 
     > yo angular:service data-service
+
+21. Create directive to compare values
+
+    > yo angular:directive compare-to
