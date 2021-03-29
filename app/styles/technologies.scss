@@ -1,5 +1,5 @@
 .technologies {
-  margin: 8rem 4rem 4rem;
+  margin: 6rem 4rem 4rem;
 
   .filter {
     display: flex;
@@ -158,7 +158,7 @@
 /* Large devices */
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .technologies {
-    margin: 2rem 2rem;
+    margin: 6rem 2rem;
 
     .techs {
       grid-template-columns: auto auto auto;

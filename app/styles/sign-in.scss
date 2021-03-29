@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5rem 2rem 0rem;
+    margin: 6rem 1rem 1rem;
 
     h2 {
         margin-bottom: 2rem;
@@ -38,17 +38,92 @@
 
 /* Extra small devices */
 @media only screen and (max-width: 374px) {
+    .sign-in {
+        .form {
+            width: 100%;
+            form {
+                width: 100%;
+                .row {
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
 
+                    .input {
+                        margin-bottom: 1rem;
+                    }
+                }
+                .actions {
+                    flex-direction: column-reverse;
+
+                    .button {
+                        padding: 0.5rem 2rem !important;
+                        margin-bottom: 1rem;
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+        }
+    }
 }
   
 /* small devices */
 @media only screen and (min-width: 375px) and (max-width: 600px) {
+    .sign-in {
+        .form {
+            width: 100%;
+            form {
+                width: 100%;
+                .row {
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
 
+                    .input {
+                        margin-bottom: 1rem;
+                    }
+                }
+                .actions {
+                    flex-direction: column-reverse;
+
+                    .button {
+                        padding: 0.5rem 2rem !important;
+                        margin-bottom: 1rem;
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+        }
+    }
 }
 
 /* Small devices */
 @media only screen and (min-width: 600px)  and (max-width: 768px) {
+    .sign-in {
+        .form {
+            width: 100%;
+            form {
+                width: 100%;
+                .row {
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
 
+                    .input {
+                        margin-bottom: 1rem;
+                    }
+                }
+                .actions {
+                    flex-direction: column-reverse;
+
+                    .button {
+                        padding: 0.5rem 2rem !important;
+                        margin-bottom: 1rem;
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+        }
+    }
 }
 
 /* Medium devices */
