@@ -1,72 +1,88 @@
 <div class="sign-in">
-    <div class="card form">
+    <div class="form">
         <form name="sign">
             <h2>Registrarse</h2>
 
             <div class="row">
                 <div class="input">
                     <label for="name">Nombre:</label>
-                    <input ng-class="{'has-error': sign.name.$touched && sign.name.$invalid}" id="name" name="name" type="text" placeholder="Buscar por nombre" ng-minlength="1" ng-maxlength="30" ng-model="user.name" required>
-                    <span class="error" ng-show="sign.name.$touched && sign.name.$invalid">The name is required.</span>
+                    <input ng-class="{'has-error': sign.name.$touched && sign.name.$invalid}" id="name" name="name" type="text" placeholder="Buscar por nombre" ng-maxlength="30" ng-model="user.name" required>
+                    <span class="error" ng-show="sign.name.$touched && sign.name.$error.required">El nombre es requerido</span>
+                    <span class="error" ng-show="sign.name.$error.maxlength">El máximo de caracteres es de 30</span>
                 </div>
 
                 <div class="input">
                     <label for="surname">Apellido:</label>
-                    <input id="surname" name="surname" type="text" placeholder="Buscar por nombre" ng-minlength="1" ng-maxlength="30" ng-model="searchByTech" required>
+                    <input ng-class="{'has-error': sign.surname.$touched && sign.surname.$invalid}" id="surname" name="surname" type="text" placeholder="Buscar por nombre" ng-maxlength="30" ng-model="user.surname" required>
+                    <span class="error" ng-show="sign.surname.$touched && sign.surname.$error.required">El apellido es requerido</span>
+                    <span class="error" ng-show="sign.surname.$error.maxlength">El máximo de caracteres es de 30</span>
                 </div>
             </div>
 
             <div class="row">
                 <div class="input">
                     <label for="country">País:</label>
-                    <select id="country" name="country" placeholder="Buscar por tipo" ng-change="search()" ng-model="searchByType" ng-options="type for type in types" required>
+                    <select ng-class="{'has-error': sign.country.$touched && sign.country.$invalid}" id="country" name="country" placeholder="Buscar por tipo" ng-change="search()" ng-model="user.country" ng-options="country.name for country in countries | orderBy : name" required>
                         <option value="">-- Escoger tipo --</option>
                     </select>
+                    <span class="error" ng-show="sign.country.$touched && sign.country.$error.required">El país es requerido</span>
                 </div>
 
                 <div class="input">
                     <label for="department">Departamento:</label>
-                    <select id="department" name="department" placeholder="Buscar por tipo" ng-change="search()" ng-model="searchByType" ng-options="type for type in types" required>
+                    <select ng-class="{'has-error': sign.department.$touched && sign.department.$invalid}" id="department" name="department" placeholder="Buscar por tipo" ng-change="search()" ng-model="user.department" ng-options="department.name for department in departments | filter : { country: user.country.id } | orderBy : 'name'" required>
                         <option value="">-- Escoger tipo --</option>
                     </select>
+                    <span class="error" ng-show="sign.department.$touched && sign.department.$error.required">El departamento es requerido</span>
                 </div>
             </div>
 
             <div class="row">
                 <div class="input">
                     <label for="email">Email:</label>
-                    <input id="email" name="email" type="email" placeholder="Buscar por nombre" ng-model="searchByTech" required>
+                    <input ng-class="{'has-error': sign.email.$touched && sign.email.$invalid}" id="email" name="email" type="email" placeholder="Buscar por nombre" ng-model="user.email" required>
+                    <span class="error" ng-show="sign.email.$touched && sign.email.$error.required">El email es requerido</span>
+                    <span class="error" ng-show="sign.email.$touched && sign.email.$error.email">No es un correo valido</label>
                 </div>
 
                 <div class="input">
                     <label for="phone">Teléfono:</label>
-                    <input id="phone" name="phone" type="text" placeholder="Buscar por nombre" ng-model="searchByTech" required>
+                    <input ng-class="{'has-error': sign.phone.$touched && sign.phone.$invalid}" id="phone" name="phone" type="text" placeholder="Buscar por nombre" ng-maxlength="10" ng-model="user.phone" ng-pattern="/^(\d)+$/" positive required>
+                    <span class="error" ng-show="sign.phone.$touched && sign.phone.$error.required">El teléfono es requerido</span>
+                    <span class="error" ng-show="sign.phone.$error.pattern">No puede tener caracteres alfanuméricos</label>
+                    <span class="error" ng-show="sign.phone.$error.maxlength">El máximo de caracteres es de 10</span>
                 </div>
             </div>
 
             <div class="row">
                 <div class="input">
                     <label for="pass">Contraseña:</label>
-                    <input id="pass" name="pass" type="password" placeholder="Buscar por nombre" ng-model="searchByTech" required>
+                    <input ng-class="{'has-error': sign.pass.$touched && sign.pass.$invalid}" id="pass" name="pass" type="password" placeholder="Buscar por nombre" ng-minlength="6" ng-model="user.pass" required>
+                    <span class="error" ng-show="sign.pass.$touched && sign.pass.$error.required">La contraseña es requerida</span>
+                    <span class="error" ng-show="sign.pass.$error.minlength">El mínimo de caracteres es de 6</span>
                 </div>
 
                 <div class="input">
                     <label for="confirm">Confirmar Contraseña:</label>
-                    <input id="confirm" name="confirm" type="password" placeholder="Buscar por nombre" ng-model="searchByTech" required>
+                    <input ng-class="{'has-error': sign.confirm.$touched && sign.confirm.$invalid}" id="confirm" name="confirm" type="password" placeholder="Buscar por nombre" ng-minlength="6" ng-model="user.confirm" compare-to="user.pass" required>
+                    <span class="error" ng-show="sign.confirm.$touched && sign.confirm.$error.required">La confirmación es requerida</span>
+                    <span class="error" ng-show="sign.confirm.$error.minlength">El mínimo de caracteres es de 6</span>
+                    <span class="error" ng-show="sign.pass.$touched && sign.confirm.$touched && sign.confirm.$error.compareTo">La contraseñas no coinciden</span>
                 </div>
             </div>
 
             <div class="row">
                 <label class="checkbox" for="terms">
                     <a ng-href="/terminos" target="_blank" rel="noopener noreferrer">Acepto Términos y Condiciones</a>
-                    <input id="terms" name="terms" type="checkbox" value="ok" ng-model="user.agree">
+                    <input id="terms" name="terms" type="checkbox" value="ok" ng-model="user.agree" required>
                     <span class="checkmark"></span>
+                    <span class="error" ng-show="sign.terms.$touched && sign.terms.$error.required">La confirmación es requerida</span>
                 </label>
             </div>
 
             <div class="actions">
-                <button class="button">Iniciar Sesión</button>
-                <button class="button" ng-click="signIn()">Siguiente</button>
+                <button type="button" class="button">Iniciar Sesión</button>
+                <button class="button" ng-click="signIn()" ng-disabled="sign.$invalid">Siguiente</button>
             </div>
         </form>
     </div>

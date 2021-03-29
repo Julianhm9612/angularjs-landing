@@ -8,8 +8,13 @@
  * factory in the angularjsLandingApp.
  */
 angular.module('angularjsLandingApp')
-  .factory('authService', ['$q', function ($q) {
+  .factory('authService', ['$q', '$http', 'config', function ($q, $http, config) {
     return {
+      signIn: function(user) {
+        return $http.post(config.apiUrl + '/signup', user).then(function(response) {
+            return response;
+        });
+      },
       getToken: function() {
         return localStorage.getItem('access_token') ? localStorage.getItem('access_token') : '';
       },
